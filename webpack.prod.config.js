@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-    entry: './src/scripts/index',
+    entry: './src/scripts/site/index',
     output: {
         path: path.join(__dirname, 'build', 'scripts'),
         filename: 'app.js',
@@ -14,7 +14,8 @@ module.exports = {
         new webpack.DefinePlugin({
             '__SHOW_DEV_TOOLS__': false,
             '__ENABLE_LOG__': false,
-            'NODE_ENV': 'production'
+            'NODE_ENV': 'production',
+            'process.env.NODE_ENV': '"production"'
         })
     ],
     resolve: {

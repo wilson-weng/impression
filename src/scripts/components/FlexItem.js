@@ -5,22 +5,22 @@ import React, { Component } from 'react';
  * FlexItem组件.
  */
 export default class FlexItem extends Component{
-    //默认props
-    static defaultProps = {
-        flex: 1,
-    }
     //prop type校验
     static propTypes = {
         flex: React.PropTypes.number
     }
+    //默认props
+    static defaultProps = {
+        flex: 1,
+    }
     //渲染
     render(){
-        let { flex } = this.props;
-        let flexClass = `flex-item${flex > 1? ('-' + flex) : ''}`;
+        let { flex, children, className, ...others } = this.props,
+            flexClass = `flex-item${flex > 1? ('-' + flex) : ''}`;
 
         return(
-           <div className={classnames(flexClass)}>
-                {this.props.children}
+           <div {...others} className={classnames(flexClass, className)}>
+                {children}
            </div>
         );
     }

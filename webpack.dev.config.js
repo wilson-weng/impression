@@ -9,7 +9,7 @@ module.exports = {
         'webpack-dev-server/client?http://localhost:9016',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
-        './src/scripts/index'
+        './src/scripts/site/index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -21,7 +21,8 @@ module.exports = {
         new webpack.DefinePlugin({
             '__SHOW_DEV_TOOLS__': false,
             '__ENABLE_LOG__': true,
-            'NODE_ENV': 'development'
+            'NODE_ENV': 'development',
+            'process.env.NODE_ENV': '"development"'
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',

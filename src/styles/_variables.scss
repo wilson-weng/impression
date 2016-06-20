@@ -411,7 +411,6 @@ $select-transition:                         all .2s ease !default;
 $select-bg:                                 #fff !default;
 $select-disable-bg:                         $gray-lighter !default;
 
-$select-addon-margin-left:                  -1.5rem !default;
 $select-selection-padding-right:            2.25rem !default;
 $select-options-top:                        120% !default;
 $select-options-box-shadow:                 0 2px 6px rgba(0,0,0,.2) !default;
@@ -561,19 +560,21 @@ $dropdown-toggle-transition:     all .2s cubic-bezier(0.4, 0, 0.2, 1) !default;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
-$zindex-dropdown-backdrop:  990 !default;
-$zindex-navbar:            1000 !default;
-$zindex-select:            1000 !default;
-$zindex-dropdown:          1000 !default;
-$zindex-datepicker:        1000 !default;
-$zindex-popover:           1060 !default;
-$zindex-tooltip:           1070 !default;
-$zindex-navbar-fixed:      1030 !default;
-$zindex-navbar-sticky:     1030 !default;
-$zindex-modal-bg:          1040 !default;
-$zindex-modal:             1050 !default;
-$zindex-message:           1060 !default;
-$zindex-notification:      1060 !default;
+$zindex-dropdown-backdrop:         990 !default;
+$zindex-navbar:                   1000 !default;
+$zindex-select:                   1000 !default;
+$zindex-dropdown:                 1000 !default;
+$zindex-datepicker:               1000 !default;
+$page-transition-z-index:         1000 !default;
+
+$zindex-navbar-fixed:             1030 !default;
+$zindex-navbar-sticky:            1030 !default;
+$zindex-modal-bg:                 1040 !default;
+$zindex-modal:                    1050 !default;
+$zindex-message:                  1060 !default;
+$zindex-notification:             1060 !default;
+$zindex-popover:                  1060 !default;
+$zindex-tooltip:                  1060 !default;
 
 
 // Navbar
@@ -597,51 +598,67 @@ $navbar-pure-border-color:          $navbar-pure-bg !default;
 
 
 //Sidebar
-$sidebar-width:               12rem !default;
-$sidebar-color:               $gray-light !default;
-$sidebar-bg:                  $gray-secondary !default;
+$sidebar-width:                                 12rem !default;
+$sidebar-color:                                 $gray-light !default;
+$sidebar-bg:                                    $gray-secondary !default;
 
-$sidebar-footer-bg:           darken($sidebar-bg, 3%) !default;
-$sidebar-footer-font-size:    $font-size-sm !default;
-$sidebar-footer-height:       35px !default;
+$sidebar-footer-bg:                             darken($sidebar-bg, 3%) !default;
+$sidebar-footer-font-size:                      $font-size-sm !default;
+$sidebar-footer-height:                         35px !default;
+
+$sidebar-nav-padding-bottom:                    2rem !default;
+
+$sidebar-nav-link-color:                        #a7b1c2 !default;
+$sidebar-nav-link-padding:                      0.6rem 1.2rem !default;
+$sidebar-nav-link-border-width:                 2px !default;
+$sidebar-nav-link-active-bg:                    darken($sidebar-bg, 3%) !default;
+$sidebar-nav-link-active-color:                 #fff !default;
+$sidebar-nav-link-active-border-color:          $brand-primary !default;
+$sidebar-nav-link-active-box-shadow:            inset 0 0 3rem darken($sidebar-bg, 4%) !default;
 
 // Navs
-$nav-item-margin:               .2rem !default;
-$nav-item-spacer-x:             1rem !default;
-$nav-item-inline-spacer:        1rem !default;
-$nav-link-padding:              .5em 1em !default;
-$nav-link-active-color:         $brand-primary !default;
-$nav-link-hover-bg:             $gray-lighter !default;
-$nav-disabled-link-color:       $gray-light !default;
-$nav-disabled-link-hover-color: $gray-light !default;
-$nav-disabled-link-hover-bg:    transparent !default;
+$nav-item-margin:                               .2rem !default;
+$nav-item-spacer-x:                             1rem !default;
+$nav-item-inline-spacer:                        1rem !default;
 
-$navbar-sidebar-title-bg:           darken($sidebar-bg, 3%) !default;
-$navbar-sidebar-title-font-size:    $font-size-lg !default;
-$navbar-sidebar-title-color:        $gray-lighter !default;
-$navbar-sidebar-title-width:        $sidebar-width !default;
-$navbar-sidebar-title-margin:       0  $nav-item-spacer-x 0 $navbar-padding-x / -1 !default;
+$nav-title-color:                               #fff !default;
+$nav-title-padding:                             1rem 0.5rem !default;
+$nav-title-font-size:                           $font-size-sm !default;
+
+$nav-link-padding:                              .5em 1em !default;
+$nav-link-active-color:                         $brand-primary !default;
+$nav-link-hover-bg:                             $gray-lighter !default;
+
+$nav-disabled-link-color:                       $gray-light !default;
+$nav-disabled-link-hover-color:                 $gray-light !default;
+$nav-disabled-link-hover-bg:                    transparent !default;
+
+$navbar-sidebar-title-bg:                       darken($sidebar-bg, 3%) !default;
+$navbar-sidebar-title-font-size:                $font-size-lg !default;
+$navbar-sidebar-title-color:                    $gray-lighter !default;
+$navbar-sidebar-title-width:                    $sidebar-width !default;
+$navbar-sidebar-title-margin:                   0  $nav-item-spacer-x 0 $navbar-padding-x / -1 !default;
 
 
-$nav-tabs-link-color:                         $gray !default;
-$nav-tabs-border-color:                       $brand-primary !default;
-$nav-tabs-border-width:                       2px !default;
-$nav-tabs-link-border-width:                  1px !default;
-$nav-tabs-link-hover-bg:                      $gray-lighter !default;
-$nav-tabs-link-hover-border-color:            $nav-tabs-link-hover-bg !default;
+$nav-tabs-link-color:                           $gray !default;
+$nav-tabs-border-color:                         $brand-primary !default;
+$nav-tabs-border-width:                         2px !default;
+$nav-tabs-link-border-width:                    1px !default;
+$nav-tabs-link-hover-bg:                        $gray-lighter !default;
+$nav-tabs-link-hover-border-color:              $nav-tabs-link-hover-bg !default;
 
-$nav-tabs-active-link-hover-color:            #fff !default;
-$nav-tabs-active-link-hover-bg:               $nav-tabs-border-color !default;
-$nav-tabs-active-link-border-color:           $nav-tabs-border-color !default;
-$nav-tabs-active-link-hover-border-color:     #ddd !default;
-$nav-tabs-justified-link-border-color:        #ddd !default;
+$nav-tabs-active-link-hover-color:              #fff !default;
+$nav-tabs-active-link-hover-bg:                 $nav-tabs-border-color !default;
+$nav-tabs-active-link-border-color:             $nav-tabs-border-color !default;
+$nav-tabs-active-link-hover-border-color:       #ddd !default;
+$nav-tabs-justified-link-border-color:          #ddd !default;
 
-$nav-tabs-justified-active-link-border-color: $body-bg !default;
+$nav-tabs-justified-active-link-border-color:   $body-bg !default;
 
-$nav-pills-color:             $nav-tabs-link-color !default;
-$nav-pills-border-radius:     $border-radius !default;
-$nav-pills-active-link-color: $component-active-color !default;
-$nav-pills-active-link-bg:    $component-active-bg !default;
+$nav-pills-color:                                $nav-tabs-link-color !default;
+$nav-pills-border-radius:                        $border-radius !default;
+$nav-pills-active-link-color:                    $component-active-color !default;
+$nav-pills-active-link-bg:                       $brand-primary !default;
 
 
 // Pagination
@@ -735,6 +752,7 @@ $tooltip-border-radius:       2px !default;
 $tooltip-arrow-width:         0.5rem !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
 
+$tooltip-transition:          all 0.36s cubic-bezier(0.4, 0, 0.2, 1) !default;
 
 // Popovers
 
@@ -780,6 +798,13 @@ $tag-border-radius:         $border-radius-sm;
 $tag-pill-padding-x:        .6em !default;
 $tag-pill-border-radius:    10rem !default;
 
+// Badge
+$badge-color:                   #fff !default;
+$badge-padding:                 3px !default;
+$badge-font-size:               $font-size-sm !default;
+$badge-box-shadow:              0 0 0 1px #fff !default;
+$badge-min-width:               20px !default;
+
 // Modals
 
 $modal-bg:                    rgba(0, 0, 0, 0.3) !default;
@@ -811,6 +836,8 @@ $modal-footer-border-width:   $modal-header-border-width !default;
 $modal-lg:                    900px !default;
 $modal-md:                    600px !default;
 $modal-sm:                    300px !default;
+
+$modal-animation-duration:    0.36s !default;
 
 
 // Alerts
@@ -852,6 +879,9 @@ $message-body-padding:         0.5rem 1rem 0.5rem 0.75rem !default;
 $message-loading-padding:     0 0.5rem 0 0 !default;
 $message-loading-border-color:$brand-primary !default;
 
+$message-enter-duration:      0.24s !default;
+$message-leave-duration:      0.36s !default;
+
 // Notification
 $notification-width:          300px !default;
 
@@ -866,6 +896,9 @@ $notice-header-padding:       0.75rem 0 0.75rem 1rem !default;
 $notice-title-margin:         0 0 0.2rem 0 !default;
 
 $notice-body-padding:         0.75rem 1rem !default;
+
+$notice-enter-duration:      0.2s !default;
+$notice-leave-duration:      0.8s !default;
 
 // Timeline
 $timeline-item-padding-bottom:             2rem !default;
@@ -1030,6 +1063,10 @@ $loading-cyclone-ball-width:                  1rem !default;
 $loading-cyclone-ball-height:                 $loading-cyclone-ball-width !default;
 $loading-cyclone-ball-color:                  darken($brand-primary, 18%) !default;
 
-
+//Page transition
+$page-transition-bg:                         #fff !default;
+$page-transition-duration:                   1.2s !default;
+$page-transition-enter-boxshadow:            0 0 2px darken($brand-primary, 12%) !default;
+$page-transition-leave-boxshadow:            $page-transition-enter-boxshadow !default;
 
 

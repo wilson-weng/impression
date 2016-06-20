@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
-import { Breadcrumb } from '../../components';
+import { Card, Breadcrumb } from '../../components';
 import { CommenTable } from '../components';
 
 export default class BreadcrumbView extends Component{
     render(){
-        let path = [{
-            name: 'Home',
-            href: 'http://wwww.google.com'
+        let routes = [{
+            path: 'Home',
         }, {
-            name: 'Library',
-            href: 'http://wwww.apple.com'
+            path: 'Library',
         }, {
-            name: 'Data'
+            path: 'Data'
         }];
 
         return (
             <div>
-                <h3>Examples</h3>
-                <div className="card">
-                    <Breadcrumb path={path}></Breadcrumb>
-                </div>
-                <h3>Arrow divider</h3>
-                <div className="card">
-                    <Breadcrumb path={path} divider="arrow"></Breadcrumb>
-                </div>
-                <h3 className="text-secondary">API</h3>
-                <CommenTable
-                    data = {[
-                        ['divider', '设置分隔符，可选值为 arrow', 'string', ''],
-                        ['path', '设置路径，必填', 'string', ''],
-                    ]}
-                ></CommenTable>
+                <Breadcrumb divider="arrow" routes={this.props.routes}/>
+                <Card block noborder>
+                    <h3>Examples</h3>
+                    <Card block>
+                        <Breadcrumb className="no-padding" routes={routes}></Breadcrumb>
+                    </Card>
+                    <h3>Arrow divider</h3>
+                    <Card block>
+                        <Breadcrumb className="no-padding" routes={routes} divider="arrow"></Breadcrumb>
+                    </Card>
+                    <h3 className="text-secondary">API</h3>
+                    <CommenTable
+                        data = {[
+                            ['divider', '设置分隔符，可选值为 arrow', 'string', ''],
+                            ['path', '设置路径，必填', 'string', ''],
+                        ]}
+                    ></CommenTable>
+                </Card>
             </div>
         );
     }
 }
+
+BreadcrumbView.title = 'Breadcrumb';
