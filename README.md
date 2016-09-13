@@ -1,38 +1,47 @@
-# Impression [![Travis][build-badge]][build] [![npm][npm-badge]][npm]
+# Impression
 
-[Bootstrap 4][bootstrap] components built with [React][react].
+一个种类丰富、简洁漂亮的React组件库。
 
-## Docs
+### 少依赖
 
-See the documentation with live editable examples.
+整个组件库只依赖了class处理工具classnames、时间处理工具moment和滚动条美化perfect-scrollbar。
 
-## Local setup
+### 安装
 
-- Install the dependencies with `npm install`
-- Run the docs site in development mode with `npm run docs`. This will watch
-  for file changes as you work. Simply refresh the page to see the updates.
-- Build with `make build`
+```
+    npm install impression-react
+```
 
-[bootstrap]: http://getbootstrap.com
-[react]: http://facebook.github.io/react/
+### 使用
 
-[documentation]: http://react-bootstrap.github.io
-[contributing]: CONTRIBUTING.md
+```JavaScript
+import { Button } from 'impression-react';
 
-[build-badge]: https://travis-ci.org/react-bootstrap/react-bootstrap.svg?branch=master
-[build]: https://travis-ci.org/react-bootstrap/react-bootstrap
+export default class MyView extends Component{
+    render(){
+        return (
+            <div>
+                <Button theme="primary">按钮</Button>
+            </div>
+        );
+    }
+}
+```
 
-[npm-badge]: https://badge.fury.io/js/react-bootstrap.svg
-[npm]: http://badge.fury.io/js/react-bootstrap
+CSS引入：
 
-[react-router-bootstrap]: https://github.com/react-bootstrap/react-router-bootstrap
-[react-router]: https://github.com/reactjs/react-router
+```
+    import 'impression-react/lib/index.css';
+```
 
-[thinkful-badge]: https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg
-[thinkful]: http://start.thinkful.com/react/?utm_source=github&utm_medium=badge&utm_campaign=react-bootstrap
+！！！推荐从工程里导出scss文件，并修改variables.scss来自定义自己的样式。
 
-[coveralls-badge]: https://coveralls.io/repos/react-bootstrap/react-bootstrap/badge.svg?branch=master&service=github
-[coveralls]: https://coveralls.io/github/react-bootstrap/react-bootstrap?branch=master
+### 本地启动
 
-[discord-badge]: https://img.shields.io/badge/Discord-Join%20chat%20%E2%86%92-738bd7.svg
-[discord]: https://discord.gg/0ZcbPKXt5bXLs9XK
+```
+    cd site && npm start
+```
+
+### Demo
+
+访问更多[示例地址](https://shenlq.github.io/impression)
